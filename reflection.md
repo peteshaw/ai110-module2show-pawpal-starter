@@ -1,71 +1,53 @@
-# PawPal+ Project Reflection
-
 ## 1. System Design
 
 **a. Initial design**
 
-- Briefly describe your initial UML design.
-- What classes did you include, and what responsibilities did you assign to each?
+The implementation uses four core classes. `Task` stores the care activity, time, duration, priority, recurrence, date, and completion state. `Pet` stores basic pet information and its tasks. `Owner` manages multiple pets and provides one method to retrieve tasks across all pets. `Scheduler` gets tasks through the owner-level method and handles sorting, filtering, conflict checks, and completion behavior. Keeping these responsibilities separate makes the code easier to test.
 
 **b. Design changes**
 
-- Did your design change during implementation?
-- If yes, describe at least one change and why you made it.
-
----
+The implementation makes recurrence part of task completion: `Task.mark_completed()` returns the next occurrence when the task repeats, and `Scheduler.complete_task()` attaches that occurrence to the same pet. This keeps the recurrence rule close to the task data while letting the scheduler coordinate the owner/pet update. The final UML diagram was updated to match these classes and methods.
 
 ## 2. Scheduling Logic and Tradeoffs
 
 **a. Constraints and priorities**
 
-- What constraints does your scheduler consider (for example: time, priority, preferences)?
-- How did you decide which constraints mattered most?
+The schedule filters tasks by date, pet, and completion state, then sorts by start time. Priority breaks ties when two tasks start at the same time. Conflict detection compares time intervals, so a 30-minute task beginning at 08:00 conflicts with another task beginning at 08:15. Daily and weekly recurrence produce a new incomplete task one day or seven days after the completed task.
 
 **b. Tradeoffs**
 
-- Describe one tradeoff your scheduler makes.
-- Why is that tradeoff reasonable for this scenario?
-
----
+The scheduler detects overlaps but should not automatically move tasks. Rescheduling could be convenient, but it requires assumptions about owner availability and acceptable time windows, task flexibility. Reporting the conflict is predictable and lets the owner decide what to change. Priority also does not move a task away from its entered time.
 
 ## 3. AI Collaboration
 
 **a. How you used AI**
 
-- How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
-- What kinds of prompts or questions were most helpful?
+AI assistance was used to help organize the implementation into classes, develop the scheduler behavior, build tests, and improve the documentation. The most useful prompts are specific about expected behavior—for example, asking for tests that verify recurrence dates or overlapping task intervals—because the result can be checked against a clear requirement.  Surprisingly Claude was able to anticipate much of what I was asking for.
 
 **b. Judgment and verification**
 
-- Describe one moment where you did not accept an AI suggestion as-is.
-- How did you evaluate or verify what the AI suggested?
-
----
+One important verification step was running the automated tests rather than assuming the code was correct from inspection. An initial test run exposed a mismatch between the intended default schedule (incomplete tasks) and the implementation's filtering behavior. The default was corrected and the suite was rerun. The current test suite passes, but it does not cover every possible input or UI interaction.
 
 ## 4. Testing and Verification
 
 **a. What you tested**
 
-- What behaviors did you test?
-- Why were these tests important?
+The tests cover task completion, adding a task to a pet and retrieving it through the owner, sorting and filtering, daily and weekly recurrence, overlap detection across pets, validation of invalid time/duration values, and duplicate pet names. These tests focus on core behaviors that could otherwise produce incorrect schedules or inconsistent task data.
 
 **b. Confidence**
 
-- How confident are you that your scheduler works correctly?
-- What edge cases would you test next if you had more time?
-
----
+Confidence is moderate to high for the tested behaviors because the suite passes. Further tests should cover tasks that end near midnight, two tasks with the exact same start time and different priorities, invalid recurrence/priority values, and UI behavior across reruns. A persistent database and daylight-saving/time-zone behavior are outside the current implementation.
 
 ## 5. Reflection
 
 **a. What went well**
 
-- What part of this project are you most satisfied with?
+The separation between models and scheduling logic makes it possible to test most behavior without launching Streamlit. The CLI demo also provides a quick way to inspect the schedule and conflict messages.
 
 **b. What you would improve**
 
-- If you had another iteration, what would you improve or redesign?
+I would add persistence so tasks survive a new app session, plus task editing/deletion and a guided conflict-resolution feature. I would also add more tests around boundary cases and potentially use dedicated date/time types throughout the UI.
 
 **c. Key takeaway**
 
-- What is one important thing you learned about designing systems or working with AI on this project?
+A useful lesson from this project is that a working UI is not a substitute for a clearly defined backend contract. Having `Owner.get_all_tasks()` as the scheduler's entry point and testing scheduler behavior independently makes the design easier to understand and change.

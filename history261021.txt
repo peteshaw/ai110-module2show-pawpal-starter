@@ -1,0 +1,595 @@
+    1  sudo dnf update
+    2  snap
+    3  snap list
+    4  snap search virtualbox
+    5  snap warnings
+    6  sudo kate
+    7  sudo dnf updagte
+    8  sudo dnf update
+    9  sudo dnf search virtualbox
+   10  sudo dnf install VirtualBox-7.2
+   11  tldr
+   12  sudo dnf search tldr
+   13  sudo dnf install tldr
+   14  tldr adduser
+   15  tldr usermod
+   16  sudo usermod -aG vboxusers peteshaw
+   17  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   18  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+   19  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+   20  brew
+   21  brew search bbrew
+   22  brew install bbrew
+   23  brew search tilde
+   24  brew search fresh
+   25  sudo dnf search fresh
+   26  sudo dnf install fresh -y
+   27  dnf install development-tools
+   28  sudo dnf install development-tools
+   29  sudo dnf group install development-tools
+   30  sudo dnf install procps-ng curl file -y
+   31  sudo dnf search steam
+   32  sudo dnf install steam -y
+   33  sudo dnf search tailscale
+   34  sudo dnf search fonts
+   35  Black on Light YellowBlack on Light YellowBlack on Light YellowBlack on Light YellowBlack on Light YellowBlack on Light Yellowsudo dnf install levien-inconsolata-fonts
+   36  sudo dnf install levien-inconsolata-fonts
+   37  sudo dnf install -Y adobe-source-code-pro-fonts mozilla-fira-mono-fonts google-droid-sans-mono-fonts dejavu-sans-mono-fonts
+   38  curl -fsSL https://tailscale.com/install.sh | sh
+   39  sudo tailscale up
+   40  cd Downloads/
+   41  ls
+   42  ssh -i cyb102-desktop-key260924.pem peteshaw@cyb102-pjs.centralus.cloudapp.azure.com
+   43  chmod 400 cyb102-desktop-key260924.pem 
+   44  ssh -i cyb102-desktop-key260924.pem peteshaw@cyb102-pjs.centralus.cloudapp.azure.com
+   45  ssh cyb102-ubudesktop
+   46  ping cyb102-ubudesktop
+   47  ssh cyb102-ubudesktop
+   48  exit
+   49  sudo dnf search qbittorrent
+   50  sudo dnf install -y  qbittorrent
+   51  mc
+   52  sudo dnf search krusader
+   53  sudo dnf install -y  krusader
+   54  neofetch
+   55  sudo dnf search firefox
+   56  sudo dnf search firefox-esr
+   57  cd Downloads/
+   58  ls
+   59  rem firefox*
+   60  rm firefox*
+   61  ls
+   62  mkdir ~/Documents/ISOs
+   63  mv ubuntu-mate-25.10-desktop-amd64.iso ~/Documents/ISOs/
+   64  ls
+   65  rm *.torrent
+   66  mkdir ~/Documents/Keys
+   67  mv cyb102-desktop-key260924.pem ~/Documents/Keys/
+   68  ls
+   69  dnf install winboat-0.9.2-x86_64.rpm
+   70  sudo dnf install winboat-0.9.2-x86_64.rpm
+   71  sudo dnf update
+   72  Sudo dnf search docker.io
+   73  sudo dnf search docker.io
+   74  sudo dnf search docker
+   75  sudo dnf remove docker                   docker-client                   docker-client-latest                   docker-common                   docker-latest                   docker-latest-logrotate                   docker-logrotate                   docker-selinux                   docker-engine-selinux                   docker-engine
+   76  sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+   77  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   78  sudo systemctl enable --now docker
+   79  sudo docker run hello-world
+   80  sudo dnf install docker-compose -y
+   81  sudo dnf updtae
+   82  sudo dnf update
+   83  sudo dnf --help
+   84  sudo dnf dsync
+   85  docker-compose
+   86  sudo dnf search docker-compose
+   87  sudo dnf install docker-compose
+   88  sudo dnf install docker-compose-switch
+   89  sudo dnf install dsudo docker run hello-worldocker-compose-switch
+   90  sudo groupadd docker
+   91  sudo usermod -Ag docker peteshaw
+   92  sudo usermod -aG docker peteshaw
+   93  sudo systemctl restart docker
+   94  logout
+   95  sudo logout
+   96  exit
+   97  history | grep ssh
+   98  ssh cyb102-ubudesktop 
+   99  exit
+  100  sudo dnf remove webap-manager
+  101  sudo dnf remove webapp-manager
+  102  htop
+  103  ktop
+  104  top
+  105  kill 128227
+  106  exit
+  107  docker
+  108  docker ps
+  109  sudo dnf search syncthing
+  110  sudo dnf install syncthing
+  111  mkdir Sync
+  112  ls
+  113  exit
+  114  cd Downloads/
+  115  ls
+  116  neofetch
+  117   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  118  cd ..
+  119  ls
+  120  cd peteshaw/
+  121  ls
+  122  sudo dnf searcch helix
+  123  sudo dnf search helix
+  124  fresh
+  125  sudo fresh /etc/syscctl.conf
+  126  echo fs.inotify.max_user_instances=256 | sudo tee -a /etc/sysctl.conf
+  127  sudo fresh /etc/syscctl.conf
+  128  cat /etc/sysctl.conf
+  129  sudo fresh /etc/sysctl.conf
+  130  exit
+  131  sudo dnf config-manager addrepo --from-repofile=https://repo.arkhost.com/helixnotes.repo && sudo dnf install helix-notes
+  132  sudo dnf search firefox
+  133  sudo dnf install firefox
+  134  dnf
+  135  dnf --help
+  136  sudo dnf autremove
+  137  sudo dnf autoremove
+  138  flatpak search firefox
+  139  sudo dnf copr enable erizur/firefox-esr
+  140  sudo dnf check-update
+  141  sudo dnf install firefox-esr
+  142  sudo dnf update helium
+  143  sudo dnf update
+  144  nobara-update
+  145  sudo update nobara-updater
+  146  sudo dnf update nobara-updater
+  147  sudo dnf clean all
+  148  sudo dnf makecache --refresh
+  149  nobara-sync repair
+  150  sudo dnf update nobara-repos fedora-repos --refresh
+  151  sudo dnf update
+  152  sudo reboot
+  153  ./runner.sh 
+  154  sourcec .venv/bin/activate
+  155  source .venv/bin/activate
+  156  ./runner.sh 
+  157   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  158  ls
+  159  ./runner
+  160  ls
+  161  ./runner.sh 
+  162  git
+  163  ./runner.sh 
+  164   /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 47379 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  165   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  166   /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 45679 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  167   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  168  ./runner
+  169  ls
+  170  ./runner.sh 
+  171  python -v
+  172  python --version
+  173  python -m venv .venv
+  174  clear
+  175  python -m pip install --upgrade pip
+  176  pip
+  177  python -m pip
+  178  source .venv/bin/activate.ps1
+  179  chmod +x setup_project.sh 
+  180  ./setup_project.sh 
+  181  ./runner.sh 
+  182  pip install -r requirements.txt
+  183  source .venv/bin/activate
+  184  pip
+  185  python -m pip install --upgrade pip
+  186  pip install -r requirements.txt 
+  187  ./runner.sh 
+  188   /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 34757 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  189   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  190   /usr/bin/env /home/peteshaw/dev/ai110-gameGlitchOriginal/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 39363 -- -m streamlit run /home/peteshaw/dev/ai110-gameGlitchOriginal/app.py 
+  191   source /home/peteshaw/dev/ai110-gameGlitchOriginal/.venv/bin/activate
+  192   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  193  distrobox
+  194  distrobox ls
+  195  distrobox enter ai110
+  196  flatpak run podman
+  197  flatpak list
+  198   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  199   /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 60133 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  200   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  201   cd /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter ; /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 51731 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  202   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  203   /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 33069 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  204   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  205  ls
+  206  neofetch
+  207  fastfetch
+  208  sudo apt install neofetch
+  209  distrobox enter ai110
+  210  exit
+  211  apt
+  212  distrobox
+  213  exit
+  214  tldr journalctl
+  215  tldr journalctl --lines 100 follow
+  216  journalctl --lines 100 follow
+  217  journalctl --lines 100 --follow
+  218  exit
+  219   /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 42457 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  220   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  221   cd /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter ; /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 41761 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  222   cd /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter ; /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52147 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  223  sudo dnf update
+  224  sudo dnf install neofetch
+  225  sudo dnf install fastfetch
+  226  fastfetch
+  227  exit 
+  228  ifconfig
+  229  sudo dnf update -y
+  230  distrobox list
+  231  distrobox enter ai110
+  232  distrobox
+  233  distrobox ls
+  234  distrobox enter ai110
+  235  exit
+  236  journalctl --lines 100 --follow
+  237   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  238  pytest tests
+  239  pytest tests /
+  240  ailed to load malcontent app filter: App filtering is globally disabled
+  241  pytest tests ~/dev/ai110-module1show-gameglitchinvestigator-starter/
+  242  pytest tests ~/dev/ai110-module1show-gameglitchinvestigator-starter/tests/
+  243  pytest tests ~/dev/ai110-module1show-gameglitchinvestigator-starter
+  244  pytest
+  245  .venv/bin/python -m pytest -v 2>&1 | tail -20
+  246  python -m pytest
+  247  python -m pytest | tail 20
+  248  python -m pytest -v | tail 20
+  249  python -m pytest -v 
+  250  tests/test_app_hints.py::test_too_high_guess_shows_go_lower PASSED       [ 11%]
+  251  tests/test_app_hints.py::test_too_low_guess_shows_go_higher PASSED       [ 22%]
+  252  tests/test_game_logic.py::test_difficulty_ranges PASSED                  [ 33%]
+  253  tests/test_game_logic.py::test_attempt_limits PASSED                     [ 44%]
+  254  tests/test_game_logic.py::test_winning_guess PASSED                      [ 55%]
+  255  tests/test_game_logic.py::test_guess_too_high PASSED                     [ 66%]
+  256  tests/test_game_logic.py::test_guess_too_low PASSED                      [ 77%]
+  257  tests/test_game_logic.py::test_numeric_strings_are_compared_by_integer_value PASSED [ 88%]
+  258  tests/test_game_logic.py::test_parse_guess PASSED                        [100%]
+  259  ============================== 9 passed in 1.00s ===============================                                                            [ 55%]
+  260  tests/test_game_logic.py::test_guess_too_high PASSED                                                                    
+  261  clear
+  262  .venv/bin/python -m pytest -v 2>&1 | tail -20
+  263   /usr/bin/env /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 32989 -- -m streamlit run /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/app.py 
+  264   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  265  .venv/bin/python -m pytest -v 2>&1 | tail -20
+  266  clear
+  267  exit
+  268   source /home/peteshaw/dev/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/activate
+  269  .venv/bin/python -m pytest -v 2>&1 | test_results.txt
+  270  .venv/bin/python -m pytest -v 2>&1 > test_results.txt
+  271  .venv/bin/python -m pytest -v 2>&1 
+  272  .venv/bin/python -m pytest -v 2>&1 > test_results.txt
+  273  git add .
+  274  git commit "still working on the stretch goals"
+  275  git commit 
+  276  git --help
+  277  .venv/bin/python -m pytest -v 2>&1 > test_results.txt
+  278  .venv/bin/python -m pytest -v 2>&1 
+  279  cd dev
+  280  ls
+  281  pwd
+  282  cd ..
+  283  cd dev
+  284  ls
+  285  chmod +x connect-to-azure-lab.sh 
+  286  ./connect-to-azure-lab.sh 
+  287  exit
+  288  journalctl
+  289  ssh -p 5033 codepath@lab-dc5f83b0-afad-49c5-86c8-aa38fbc1a4f9.eastus.cloudapp.azure.com
+  290  exit
+  291  java --version
+  292  exit
+  293  distrobox 
+  294  distrobox list --help
+  295  sudo dnf search fira 
+  296  sudo dnf install bbox-firago-fonts fira-code-fonts -y
+  297  cd Downloads/
+  298  ls
+  299  unzip *.zip
+  300  ls
+  301  unzip CommitMonoV143.zip 
+  302  ls
+  303  unzip IBM_Plex_Mono,PT_Mono.zip 
+  304  unzip PT_Mono
+  305  exit
+  306  clear
+  307  cd ..
+  308  exit
+  309  OA
+  310  fastfetch
+  311  sudo apt search neofetch
+  312  sudo apt install neofetch -y
+  313  neofetch
+  314  sudo apt update
+  315  sudo apt upgrade -y
+  316  wget https://raw.githubusercontent.com/codepath/cyb102-vm-setup/main/install_tool.sh
+  317  bash install_tool.sh 
+  318  ls
+  319  mc
+  320  sudo apt install ne mc tikde
+  321  sudo apt install ne mc tilde
+  322  mc
+  323  cd Dev
+  324  ls
+  325  cd ..
+  326  cd Dev
+  327  ls
+  328  cp ~/Downloads/install_tool.sh 
+  329  cp ~/Downloads/install_tool.sh .
+  330  ls
+  331  wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh
+  332  sudo wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh
+  333  sudo wget -O netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh 
+  334  ls
+  335  chmod +x netdata-kickstart.sh 
+  336  ./netdata-kickstart.sh
+  337  sudo chmod +x netdata-kickstart.sh 
+  338  ./netdata-kickstart.sh 
+  339  exit distrobox
+  340  fastfetch
+  341  sudo apt install fastfetch
+  342  neofetch
+  343  nginx 
+  344  sudo systemctl status nginx
+  345  systemctl
+  346  service
+  347  sudo service nginx --status
+  348  sudo service nginx status
+  349  sudo service nginx start
+  350  sudo service nginx status
+  351  nginx
+  352  sudo nginx
+  353  ls
+  354  tar -xzvf tse-linux-4.50.30.tgz 
+  355  ln -s /home/peteshaw/.local/share/applications/tse/e tse
+  356  pwd
+  357  ls
+  358  rm tse
+  359  ln -s /home/peteshaw/.local/share/applications/tse/e /home/peteshaw/.local/share/applications/tse
+  360  ln -s /home/peteshaw/.local/share/applications/tse/e /home/peteshaw/.local/share/applications/e
+  361  e
+  362  echo $path
+  363  echo $PATH
+  364  brew
+  365  ln -s /home/peteshaw/.local/share/applications/tse/e /home/peteshaw/.local/bin/e
+  366  e
+  367  cd /var/log/nginx/
+  368  ls
+  369  e error.log 
+  370  sudo e error.log 
+  371  cat error.log 
+  372  sudo cat error.log 
+  373  sudo cat access.log 
+  374  sudo service
+  375  sudo service --status-all
+  376  sudo service reload nginx
+  377  sudo service
+  378  sudo service --help
+  379  sudo service nginx status
+  380  sudo service nginx start
+  381  sudo service nginx status
+  382  service nginx status
+  383  ls
+  384  cd ~/Dev
+  385  ls
+  386  service nginx status
+  387  sudo service nginx status
+  388  sudo ss -tulpn | grep ':80'
+  389  sudo ss -tulpn 
+  390  sudo ss -tulpn | grep ':80'
+  391  cd /opt
+  392  ls
+  393  cd /opt/nginx
+  394  cd ~/Dev
+  395  ls
+  396  e install_tool.sh 
+  397  sudo apt search nginx
+  398  sudo apt install nginx
+  399  sudo service start nginx
+  400  sudo service nginx start
+  401  systemctl
+  402  sudo apt install systemctl
+  403  sudo systectl
+  404  sudo systemctl
+  405  sudo systemctl start nginx
+  406  systemctl list-unit-files
+  407  sudo systemctl start ngingx.service
+  408  sudo systemctl start ngingx
+  409  systemctl list-unit-files
+  410  sudo systemctl enable --now nginex
+  411  sudo systemctl 
+  412  sudo systemctl --help
+  413  sudo systemctl reload nginx
+  414  sudo systemctl status nginx
+  415  sudo systemctl restart nginx
+  416  sudo ne /var/log/journal/nginx.service.log
+  417  mc
+  418  sudo apt remove systemctl
+  419  sudo apt remove nginx
+  420  sudo apt update
+  421  sudo apt upgrade
+  422  sudo apt autoremove
+  423  sudo apt --help
+  424  sudo apt install nginx
+  425  nginx
+  426  ne /etc/nginx/nginx/conf
+  427  ne /etc/nginx/nginx.conf 
+  428  sudo pkill nginx
+  429  sudo service enable nginx
+  430  sudo service nginx
+  431  sudo service nginx start
+  432  sudo service nginx status
+  433  nginx
+  434  ne /etc/nginx/nginx.conf 
+  435  sudo mkdir /var/log/nginx
+  436  sudo chown -R www-data:adm /var/log/nginx
+  437  sudo chmod -R 755 /var/log/nginx
+  438  sudo touch /var/log/nginx/access.log /var/log/nginx/error.log
+  439  sudo chown www-data:adm /var/log/nginx/access.log /var/log/nginx/error.log
+  440  sudo chmod 640 /var/log/nginx/access.log /var/log/nginx/error.log
+  441  sudo nginx -t
+  442  sudo service nginx restart
+  443  sudo nginx 
+  444  ne /etc/nginx/nginx.conf 
+  445  sudo mkdir -p /var/log/nginx
+  446  sudo chown -R www-data:adm /var/log/nginx
+  447  sudo chmod -R 755 /var/log/nginx
+  448  sudo chown -R www-data:adm /var/log/nginx
+  449  sudo service nginx restart
+  450  cat /var/log/nginx/error.log 
+  451  sudo lsop -i 80
+  452  sudo lsof -i 80
+  453  sudo lsof -i :80
+  454  which nginx
+  455  getcap /usr/sbin/nginx
+  456  sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx
+  457  getcap /usr/sbin/nginx
+  458  sudo service nginx restart
+  459  cat /var/log/nginx/error.log 
+  460  selinux
+  461  apparmor
+  462  sudo nginx -t
+  463  sudo nginx -T
+  464  lsof
+  465  lsof -i
+  466  lsof --help
+  467  sudo service nginx edit
+  468  sudo service nginx configtest
+  469  exit
+  470  eval "$(brew shellenv)"
+  471  brew
+  472  starship
+  473  starship prompt
+  474  starship config
+  475  fresh .config/starship.toml 
+  476  clear
+  477  starship prompt
+  478  fresh .config/starship.toml 
+  479  starship prompt
+  480  starship prompt --help
+  481  cd ..
+  482  pwd
+  483  cd ~/
+  484  pwd
+  485  cd Downloads/
+  486  s
+  487  fresh .config/starship.toml 
+  488  starship
+  489  starship exit
+  490  distrobox enter ai110
+  491  distrobox create --image ubuntu:20.04 -name cyb102
+  492  distrobox create --image ubuntu:20.04 --name ubuntu20
+  493  distrobox 
+  494  distrobox rm ubuntu20
+  495  distrobox create --image ubuntu:20.04 --name cyb102
+  496  distrobox enter cyb102 
+  497  distrobox exit 
+  498  podman ls
+  499  podman ps
+  500  podman 
+  501  fastfetch
+  502  distrobox enter cyb102
+  503  distrobox
+  504  distrobox ls
+  505  distrobox stop cyb102
+  506  distrobox rm cyb102
+  507  exit
+  508  clear
+  509  bash
+  510  exit
+  511  nginx
+  512  sudo systemctl --list-all
+  513  sudo systemctl 
+  514  distrobox
+  515  distrobox ls
+  516  distrobox stop ai110
+  517  podman ps
+  518  podman ps --format "{{.Names}:{{.Ports}}"
+  519  podman ps --format "{{.Names}: {{.Ports}}"
+  520  docker ps --format "{{.Names}}: {{.Ports}}"
+  521  htop
+  522  ktop
+  523  top
+  524  exit
+  525  clear
+  526  flatpak list
+  527  flatpak search podman
+  528  mc
+  529  sudo nginx
+  530  sudo lsop -i :80
+  531  sudo lsof -i :80
+  532  sudo netstat -tlnp | grep :80
+  533  which nginx
+  534  flatpak run podman
+  535  flatpak searchpodman
+  536  flatpak search podman
+  537  flatpak search PodmanDesktop
+  538  flatpak install io.podman_desktop.PodmanDesktop
+  539  sudo dnf update
+  540  sudo tee -a /etc/dnf/dnf.conf << 'EOF'
+  541  max_parallel_downloads=10
+  542  EOF
+  543  nano
+  544  sudo dnf search ne
+  545  sudo dnf search nice editor
+  546  sudo dnf install ne
+  547  sudo dnf search tilde
+  548  sudo dnf search fresh
+  549  sudo dnf install fresh -y
+  550  sudo fresh /etc/dnf/dnf.conf
+  551  sudo dnf update
+  552  flatpak update
+  553  exxit
+  554  exit
+  555  sudo ne /etc/dnf/dnf/conf
+  556  sudo ne /etc/dnf/dnf.conf
+  557  sudo tilde /etc/dnf/dnf.conf
+  558  sudo nano /etc/dnf/dnf.conf
+  559  nano
+  560  echo $PATH
+  561  distrobox
+  562  nano
+  563  sodo dnf search texteditor
+  564  flatpak --help
+  565  exit
+  566   source /home/peteshaw/dev/ai110-tinker-studysync-starter/.venv/bin/activate
+  567   source /home/peteshaw/Dev/ai110-tinker-studysync-starter/.venv/bin/activate
+  568   /usr/bin/env /home/peteshaw/Dev/ai110-tinker-studysync-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 52529 -- -m streamlit run /home/peteshaw/Dev/ai110-tinker-studysync-starter/app.py 
+  569   source /home/peteshaw/Dev/ai110-tinker-studysync-starter/.venv/bin/activate
+  570   cd /home/peteshaw/Dev/ai110-tinker-studysync-starter ; /usr/bin/env /home/peteshaw/Dev/ai110-tinker-studysync-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 60655 -- -m streamlit run /home/peteshaw/Dev/ai110-tinker-studysync-starter/app.py 
+  571  Print load_study_spots("data/study_spots.csv") 
+  572  python
+  573   cd /home/peteshaw/Dev/ai110-tinker-studysync-starter ; /usr/bin/env /home/peteshaw/Dev/ai110-tinker-studysync-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 60835 -- -m streamlit run /home/peteshaw/Dev/ai110-tinker-studysync-starter/app.py 
+  574   cd /home/peteshaw/Dev/ai110-tinker-studysync-starter ; /usr/bin/env /home/peteshaw/Dev/ai110-tinker-studysync-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 54047 -- -m streamlit run /home/peteshaw/Dev/ai110-tinker-studysync-starter/app.py 
+  575   cd /home/peteshaw/Dev/ai110-tinker-studysync-starter ; /usr/bin/env /home/peteshaw/Dev/ai110-tinker-studysync-starter/.venv/bin/python /home/peteshaw/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher 53501 -- -m streamlit run /home/peteshaw/Dev/ai110-tinker-studysync-starter/app.py 
+  576  python -m pip install certify
+  577  pip-audit
+  578  python pip-audit
+  579  docker ps
+  580  curl -v http://localhost:8080
+  581  docker logs --tail 100 interesting_tu
+  582  docker port 8080
+  583  docker port  interesting_tu
+  584  curl -v --max-time 5 http://127.0.0.1:8088
+  585  exit
+  586  docker run --rm -it -p 8088:8080 -v catalyst-lab-data:/usr/local/bin/catalyst_data ghcr.io/codepath/opencyber-catalyst-lab:latest
+  587  exit
+  588   source /home/peteshaw/Dev/ai110-tinker-studysync-starter/.venv/bin/activate
+  589  cd Dev
+  590  ls
+  591  git clone [200~https://github.com/codepath/ai110-module2show-pawpal-starter
+  592  git clone https://github.com/codepath/ai110-module2show-pawpal-starter
+  593  cd ai110-module2show-pawpal-starter/
+  594  history
+  595  history > history261021.txt

@@ -46,13 +46,23 @@ pip install -r requirements.txt
 
 Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
 
+## Example CLI output
+
+The following is the output from `python main.py` in the development environment (the schedule date is generated at runtime):
+
+```text
+PawPal+ schedule for Jordan
+Today's Schedule
+08:00 — Morning walk (30 min) [high; Mochi]
+08:15 — Breakfast (10 min) [high; Pepper]
+18:00 — Dinner (10 min) [high; Mochi]
+Tasks are ordered by start time; ties are ordered by priority.
+
+Schedule conflicts:
+- Morning walk (Mochi) overlaps Breakfast (Pepper)
 ```
-# e.g.:
-# Daily plan for Biscuit (Golden Retriever):
-#   08:00 — Morning walk (30 min) [priority: high]
-#   09:00 — Feeding (10 min) [priority: high]
-#   ...
-```
+
+The conflict is intentional in the demo: Mochi's 08:00–08:30 walk overlaps Pepper's 08:15–08:25 breakfast task.
 
 ## 🧪 Testing PawPal+
 
