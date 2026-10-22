@@ -80,7 +80,7 @@ tasks = scheduler.get_schedule(schedule_date, pet_name=pet_arg, completed=comple
 if tasks:
     for index, task in enumerate(tasks):
         cols = st.columns([0.7, 2.2, 1.2, 1, 1, 1.2])
-        cols[0].write(task.time)
+        cols[0].write(task.start_time)
         cols[1].write(f"**{task.title}**")
         cols[1].caption(f"{task.pet_name} · {task.duration_minutes} min")
         cols[2].write(task.priority.title())
@@ -101,9 +101,9 @@ if conflicts:
     st.warning("Schedule conflicts detected: overlapping tasks are listed below.")
     for first, second in conflicts:
         st.write(
-            f"- **{first.title}** ({first.pet_name}, {first.time}–"
+            f"- **{first.title}** ({first.pet_name}, {first.start_time}–"
             f"{first.end_minutes // 60:02d}:{first.end_minutes % 60:02d}) overlaps "
-            f"**{second.title}** ({second.pet_name}, {second.time}–"
+            f"**{second.title}** ({second.pet_name}, {second.start_time}–"
             f"{second.end_minutes // 60:02d}:{second.end_minutes % 60:02d})."
         )
 else:
@@ -114,7 +114,7 @@ with st.expander("All registered pets and tasks"):
         st.markdown(f"**{pet.name}** ({pet.species}) — {len(pet.tasks)} task(s)")
         if pet.tasks:
             st.dataframe(
-                [{"Task": t.title, "Date": t.due_date.isoformat(), "Time": t.time,
+                [{"Task": t.title, "Date": t.due_date.isoformat(), "Time": t.start_time,
                   "Duration": t.duration_minutes, "Priority": t.priority,
                   "Recurrence": t.recurrence, "Completed": t.completed}
                  for t in pet.tasks],
