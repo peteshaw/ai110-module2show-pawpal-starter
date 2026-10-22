@@ -8,6 +8,14 @@
       "module": "streamlit",
       "args": ["run", "${workspaceFolder}/app.py"],
       "justMyCode": true
+    },
+    {
+      "name": "Main",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
     }
   ]
 }
