@@ -66,18 +66,35 @@ The conflict is intentional in the demo: Mochi's 08:00–08:30 walk overlaps Pep
 
 ## 🧪 Testing PawPal+
 
-```bash
 # Run the full test suite:
+```
 pytest
 
+=============================================== test session starts ================================================
+platform linux -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /home/peteshaw/Dev/ai110-module2show-pawpal-starter
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1, cov-7.1.0
+collected 34 items                                                                                                 
+
+tests/test_pawpal.py ..................................                                                      [100%]
+```
+
+
 # Run with coverage:
+```
 pytest --cov
-```
 
-Sample test output:
+=============================================== test session starts ================================================
+platform linux -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
+rootdir: /home/peteshaw/Dev/ai110-module2show-pawpal-starter
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1, cov-7.1.0
+collected 34 items                                                                                                 
 
-```
-# Paste your pytest output here
+tests/test_pawpal.py ..................................                                                      [100%]
 ```
 
 ## 📐 Smarter Scheduling

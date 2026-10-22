@@ -202,8 +202,8 @@ class Scheduler:
         """Find pairs of tasks whose time slots overlap on a given day.
 
         Tasks for different pets are checked too, since the owner can only
-        do one thing at a time. A task that ends exactly when another starts
-        is not a conflict.
+        do one thing at a time. Completed tasks are ignored, and a task that
+        ends exactly when another starts is not a conflict.
 
         Args:
             for_date: The day to check. Defaults to today.
@@ -211,7 +211,7 @@ class Scheduler:
         Returns:
             A list of (earlier task, later task) pairs.
         """
-        tasks = self.get_schedule(for_date=for_date, completed=None)
+        tasks = self.get_schedule(for_date=for_date)
         conflicts: list[tuple[Task, Task]] = []
         for index, first in enumerate(tasks):
             for second in tasks[index + 1:]:
