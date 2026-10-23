@@ -1,50 +1,43 @@
-# PawPal+ (Module 2 Project)
+# PawPal+ — Pet Care Scheduler
 
-You are building **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet.
+PawPal+ is a small Python and Streamlit app for tracking care tasks for multiple pets. It demonstrates object-oriented design, date-aware scheduling, recurring tasks, filtering, overlap detection, and automated tests.
 
-## Scenario
+## Features
 
-A busy pet owner needs help staying consistent with pet care. They want an assistant that can:
+- **Task, Pet, Owner, Scheduler classes** separate task data, pet task lists, owner-level aggregation, and scheduling behavior.
+- Add pets and care tasks with a date, start time, duration, priority, notes, and recurrence (`none`, `daily`, `weekly`).
+- View a schedule sorted by start time. When tasks share a start time, higher priority appears first.
+- Filter the schedule by pet and completion status.
+- Mark tasks complete. Daily and weekly tasks create a new incomplete occurrence one day or seven days later.
+- Detect overlapping task time ranges, including conflicts between different pets.
+- Streamlit state keeps the owner and tasks while interacting with the app.
 
-- Track pet care tasks (walks, feeding, meds, enrichment, grooming, etc.)
-- Consider constraints (time available, priority, owner preferences)
-- Produce a daily plan and explain why it chose that plan
+## Setup
 
-Your job is to design the system first (UML), then implement the logic in Python, then connect it to the Streamlit UI.
-
-## What you will build
-
-Your final app should:
-
-- Let a user enter basic owner + pet info
-- Let a user add/edit tasks (duration + priority at minimum)
-- Generate a daily schedule/plan based on constraints and priorities
-- Display the plan clearly (and ideally explain the reasoning)
-- Include tests for the most important scheduling behaviors
-
-## Getting started
-
-### Setup
+Python 3.10+ is recommended.
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### Suggested workflow
+## Run the app
 
-1. Read the scenario carefully and identify requirements and edge cases.
-2. Draft a UML diagram (classes, attributes, methods, relationships).
-3. Convert UML into Python class stubs (no logic yet).
-4. Implement scheduling logic in small increments.
-5. Add tests to verify key behaviors.
-6. Connect your logic to the Streamlit UI in `app.py`.
-7. Refine UML so it matches what you actually built.
+Launch the interactive UI:
 
-## 🖥️ Sample Output
+```bash
+streamlit run app.py
+```
 
-Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
+Run the CLI demonstration:
+
+```bash
+python main.py
+```
+
+The CLI demo creates an owner with two pets and three tasks dated for the current day. It prints the schedule and flags overlapping tasks.
 
 ## Example CLI output
 
@@ -64,58 +57,63 @@ Schedule conflicts:
 
 The conflict is intentional in the demo: Mochi's 08:00–08:30 walk overlaps Pepper's 08:15–08:25 breakfast task.
 
-## 🧪 Testing PawPal+
+## Scheduling behavior
 
-# Run the full test suite:
-```
-pytest
+| Feature | Implementation | Notes |
+|---|---|---|
+| Task sorting | `Scheduler.get_schedule()` | Start time ascending; priority descending for equal start times; title breaks remaining ties. |
+| Filtering | `Scheduler.get_schedule()` | Supports a date, pet name, and completion status. By default it shows incomplete tasks for the current date. |
+| Conflict handling | `Scheduler.find_conflicts()` | Reports overlapping time intervals, including tasks assigned to different pets. Adjacent tasks whose end/start times match are not considered overlapping. |
+| Recurring tasks | `Task.mark_completed()` and `Scheduler.complete_task()` | Completing daily/weekly tasks creates the next occurrence on the same pet. Non-recurring tasks do not repeat. |
+| Explanation | `Scheduler.explain_schedule()` | Prints each task's time, duration, priority, and pet, then explains the ordering rule. |
 
-=============================================== test session starts ================================================
-platform linux -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
-rootdir: /home/peteshaw/Dev/ai110-module2show-pawpal-starter
-configfile: pytest.ini
-testpaths: tests
-plugins: anyio-4.15.1, cov-7.1.0
-collected 34 items                                                                                                 
+Times are local 24-hour `HH:MM` strings. This is a small single-day planner, not a calendar/time-zone service. Tasks that run past midnight are not split across dates.
 
-tests/test_pawpal.py ..................................                                                      [100%]
-```
+## Tests
 
+Run the suite from the project root:
 
-# Run with coverage:
-```
-pytest --cov
-
-=============================================== test session starts ================================================
-platform linux -- Python 3.13.13, pytest-9.1.1, pluggy-1.7.0
-rootdir: /home/peteshaw/Dev/ai110-module2show-pawpal-starter
-configfile: pytest.ini
-testpaths: tests
-plugins: anyio-4.15.1, cov-7.1.0
-collected 34 items                                                                                                 
-
-tests/test_pawpal.py ..................................                                                      [100%]
+```bash
+python -m pytest -v
 ```
 
-## 📐 Smarter Scheduling
+The current test suite covers task completion, task assignment and owner aggregation, time sorting, pet/completion filters, daily and weekly recurrence, overlapping tasks across pets, invalid time/duration validation, and duplicate pet names.
 
-> Fill in once you've implemented scheduling logic.
+Latest local test run (`python -m pytest -v`):
 
-| Feature | Method(s) | Notes |
-|---------|-----------|-------|
-| Task sorting | | e.g., by priority, duration |
-| Filtering | | e.g., skip tasks if time runs out |
-| Conflict handling | | e.g., overlapping time slots |
-| Recurring tasks | | e.g., daily vs. weekly |
+```text
+tests/test_pawpal.py::test_task_completion PASSED
+tests/test_pawpal.py::test_add_task_to_pet_and_owner PASSED
+tests/test_pawpal.py::test_schedule_sorted_by_time_and_filters PASSED
+tests/test_pawpal.py::test_daily_recurrence_creates_next_day_task PASSED
+tests/test_pawpal.py::test_weekly_recurrence_creates_next_week_task PASSED
+tests/test_pawpal.py::test_overlapping_tasks_are_conflicts_across_pets PASSED
+tests/test_pawpal.py::test_invalid_time_and_duration_rejected PASSED
+tests/test_pawpal.py::test_duplicate_pet_name_rejected_case_insensitively PASSED
 
-## 📸 Demo Walkthrough
+============================== 8 passed in 0.03s ===============================
+```
 
-Describe your app in numbered steps so a reader can follow along without watching a video:
+The tests are automated checks of the current implementation; they do not prove every edge case is covered. Confidence: **moderate to high for the tested core behaviors**. Useful next tests include tasks near midnight, simultaneous tasks with different priorities, and repeated completion attempts.
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+## Demo walkthrough
 
-**Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
+1. Run `streamlit run app.py`.
+2. In the sidebar, edit the owner name or add another pet.
+3. Add a task and choose the pet, date, time, duration, priority, and recurrence.
+4. Use the daily schedule filters to show a particular pet and/or completed tasks.
+5. Select **Complete** to mark a task done; recurring tasks create their next occurrence.
+6. Review the conflict warning below the schedule and adjust times/durations to resolve overlaps.
+7. Run `python main.py` for the same core logic in a terminal.
+
+## Design summary
+
+- `Task` validates task data and owns recurrence behavior.
+- `Pet` owns its assigned task list.
+- `Owner` manages pets and provides `get_all_tasks()`. `Scheduler` obtains tasks through that owner method instead of reaching into each pet directly.
+- `Scheduler` owns schedule sorting/filtering, conflict detection, and completion orchestration.
+- `diagrams/uml_final.mmd` is the final Mermaid class diagram.
+
+## Limitations and possible improvements
+
+The scheduler reports conflicts rather than automatically moving tasks. Priority is used only to order tasks that start at the same time; it does not override a requested start time. Persistence is in Streamlit session state, so tasks are not saved to a database or retained across a new session. Possible extensions include persistent storage, configurable owner availability, editing/deleting tasks, and suggestions for resolving conflicts.

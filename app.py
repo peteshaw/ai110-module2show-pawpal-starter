@@ -96,6 +96,9 @@ if tasks:
 else:
     st.info("No tasks match these filters for this date.")
 
+with st.expander("Plain-text schedule"):
+    st.code(scheduler.explain_schedule(tasks), language=None)
+
 conflicts = scheduler.find_conflicts(schedule_date)
 if conflicts:
     st.warning("Schedule conflicts detected: overlapping tasks are listed below.")

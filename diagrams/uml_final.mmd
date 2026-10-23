@@ -7,35 +7,39 @@ classDiagram
         +str recurrence
         +date due_date
         +bool completed
-        +str pet_name
+        +Optional~str~ pet_name
         +str notes
-        +start_minutes int
-        +end_minutes int
-        +mark_completed() Task
+        +int start_minutes
+        +int end_minutes
+        +mark_completed() Optional~Task~
     }
     class Pet {
         +str name
         +str species
-        +int age
+        +Optional~int~ age
         +list~Task~ tasks
-        +add_task(task) void
-        +get_tasks(include_completed) list
+        +add_task(task) None
+        +get_tasks(include_completed) list~Task~
     }
     class Owner {
         +str name
         +list~Pet~ pets
-        +add_pet(pet) void
-        +get_all_tasks(include_completed) list
+        +add_pet(pet) None
+        +get_all_tasks(include_completed) list~Task~
         +find_pet(name) Pet
     }
     class Scheduler {
+        +dict PRIORITY_ORDER$
         +Owner owner
         +get_schedule(for_date, pet_name, completed) list~Task~
-        +find_conflicts(for_date) list
-        +complete_task(task) Task
+        +find_conflicts(for_date) list~tuple~
+        +complete_task(task) Optional~Task~
         +explain_schedule(tasks) str
     }
+    note for Scheduler "find_conflicts returns (earlier Task, later Task) pairs"
     Owner "1" o-- "0..*" Pet : manages
     Pet "1" o-- "0..*" Task : has
     Scheduler --> Owner : reads tasks from
     Scheduler ..> Task : schedules and completes
+    Scheduler ..> Pet : adds next occurrence to
+    Task ..> Task : creates next occurrence
